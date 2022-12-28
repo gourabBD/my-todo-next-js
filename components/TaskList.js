@@ -81,7 +81,7 @@ const TaskList = () => {
             )}
 
             <div className="card-actions  justify-end mx-5">
-              <Link href={'/tasks/[taskId]'} as={`/tasks/${encodeURIComponent(task?._id)}`}>
+              <Link href={'/tasks/[taskId]'} as={`/tasks/${task?._id}`}>
                 <button className="btn btn-xs btn-outline btn-primary">
                   Edit
                 </button>

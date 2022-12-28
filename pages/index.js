@@ -5,10 +5,13 @@ import Link from "next/link"
 import TaskForm from '../components/TaskForm'
 import TaskList from '../components/TaskList';
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
+    
+
     <div className='min-h-screen'>
     <Head >
             <title>Home</title>
@@ -23,5 +26,6 @@ export default function Home() {
     
      <Toaster />
     </div>
+   
   )
 }

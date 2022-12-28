@@ -1,9 +1,11 @@
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 
 const TaskId = ({ task }) => {
+   
    
   const router = useRouter();
 
@@ -33,6 +35,8 @@ const TaskId = ({ task }) => {
   };
 
   return (
+   
+
     <div className="min-h-screen flex justify-center p-2">
      <Head>
             <title>Edit Task</title>
@@ -62,6 +66,7 @@ const TaskId = ({ task }) => {
         </div>
       </form>
     </div>
+    
   );
 };
 
