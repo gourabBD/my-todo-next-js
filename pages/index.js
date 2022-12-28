@@ -10,6 +10,9 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <div className='min-h-screen'>
+    <Head >
+            <title>Home</title>
+        </Head>
      <div className="flex justify-center p-2">
       <TaskForm></TaskForm>
       

@@ -1,5 +1,6 @@
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 const TaskId = ({ task }) => {
   const router = useRouter();
@@ -31,6 +32,9 @@ const TaskId = ({ task }) => {
 
   return (
     <div className="min-h-screen flex justify-center p-2">
+     <Head>
+            <title>Edit Task</title>
+        </Head>
       <form
         onSubmit={handleUpdateTask}
         className="lg:w-3/5 md:w-3/5 sm:w-3/5 w-full"
