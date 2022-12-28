@@ -1,7 +1,7 @@
 
 
-const Tasks = ({tasks}) => {
-    console.log(tasks);
+const Tasks = () => {
+   
     return (
         <div>
             <h1>hii</h1>
