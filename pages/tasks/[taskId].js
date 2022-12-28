@@ -1,15 +1,17 @@
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { useState } from "react";
 
 const TaskId = ({ task }) => {
+   
   const router = useRouter();
 
   const handleUpdateTask = (event) => {
     event.preventDefault();
     const form = event.target;
     const taskDetail = form.taskDetail.value;
-    console.log(task?._id);
+    
 
     fetch(`https://my-todo-server-nu.vercel.app/tasks/${task?._id}`, {
       method: "PATCH",
@@ -44,10 +46,10 @@ const TaskId = ({ task }) => {
         </div>
         <div className="w-full">
           <textarea
-            defaultValue={task?.taskDetails}
+            
             name="taskDetail"
             className="textarea textarea-primary my-5 w-full"
-            placeholder="Add Task"
+            placeholder={task?.taskDetails}
           />
         </div>
         <div>
