@@ -50,7 +50,7 @@ const TaskList = () => {
     <div className="my-5 p-5 w-full">
       {tasks.length > 0 ? (
         <div className="flex justify-center">
-          <h1 className="text-2xl text-primary">All Of Your Tasks</h1>
+          <h1 className="text-2xl text-primary">All Tasks</h1>
         </div>
       ) : (
         <div className="flex justify-center">
