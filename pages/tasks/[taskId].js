@@ -5,15 +5,15 @@ import { useEffect, useState } from "react";
 import IndividualTask from "../../components/IndividualTask";
 
 
-const TaskId = () => {
-  const router=useRouter()
-const id=router.query.taskId
-const [task,setTask]=useState([])
-useEffect(()=>{
-  fetch(`https://my-todo-server-nu.vercel.app/tasks/${id}`)
-  .then(res=>res.json())
-  .then(data=>setTask(data))
-},[task])
+const TaskId = ({task}) => {
+//   const router=useRouter()
+// const id=router.query.taskId
+// const [task,setTask]=useState([])
+// useEffect(()=>{
+//   fetch(`https://my-todo-server-nu.vercel.app/tasks/${id}`)
+//   .then(res=>res.json())
+//   .then(data=>setTask(data))
+// },[task])
 
   return (
    
@@ -27,19 +27,21 @@ useEffect(()=>{
     
   );
 };
+export default TaskId;
 
-// export const getServerSideProps= async ()=>{
-  
+export const getServerSideProps= async (context)=>{
+  const {params}=context
+  console.log(params?.taskId)
 
-//   const res= await fetch(`https://my-todo-server-nu.vercel.app/tasks/${id}`)
-//   const data= await res.json()
-//   console.log(data);
-//   return{
-//      props:{
-//          task: data
-//      }
-//   }
-//  }
+  const res= await fetch(`https://my-todo-server-nu.vercel.app/tasks/${params?.taskId}`)
+  const data= await res.json()
+  console.log(data);
+  return{
+     props:{
+         task: data
+     }
+  }
+ }
 
 // export const getStaticProps = async (context) => {
 //   const { params } = context;
@@ -71,4 +73,4 @@ useEffect(()=>{
 //   };
 // };
 
-export default TaskId;
+

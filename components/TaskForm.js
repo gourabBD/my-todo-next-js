@@ -5,7 +5,7 @@ const TaskForm = () => {
     event.preventDefault();
     const form = event.target;
     const taskDetails = form.taskDetail.value;
-    console.log(taskDetails);
+    
     const myTasks = {
       taskDetails,
       done: false,
